@@ -1,3 +1,10 @@
+import { useState } from "react";
+import { ButtonContainer } from "./styled";
+
 export function Button_Calcular() {
-  return <p>calcular</p>;
+  return (
+    <ButtonContainer>
+      <p>Calcular</p>
+    </ButtonContainer>
+  );
 }

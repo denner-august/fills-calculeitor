@@ -1,14 +1,19 @@
+import { useState } from "react";
 import { Container } from "./styles";
 
 interface inputProps {
   titulo: string;
+  mensagemQuantidade: string;
+  mensagemValor: string;
 }
 export function Calculadora(props: inputProps): JSX.Element {
-  const { titulo } = props;
+  const { titulo, mensagemQuantidade, mensagemValor } = props;
 
   return (
     <Container>
-      <h1>{titulo}</h1>
+      <h2>{titulo}</h2>
+      <input type="number" placeholder={mensagemQuantidade} />
+      <input type="number" placeholder={mensagemValor} />
     </Container>
   );
 }

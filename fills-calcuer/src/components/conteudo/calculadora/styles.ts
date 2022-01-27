@@ -7,5 +7,20 @@ export const Container = styled.main`
     height: 30%;
     -webkit-box-shadow: 0px 0px 11px 3px rgba(0,0,0,0.62); 
     box-shadow: 0px 0px 11px 3px rgba(0,0,0,0.62);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+input{
+    width: 70%;
+    height: 3rem;
+    margin: 1rem;
+    border-radius: 10px;
+    border-width: 0.1px;
+    border-color: black;
+    text-align: center;
+   
+}
 
 `
