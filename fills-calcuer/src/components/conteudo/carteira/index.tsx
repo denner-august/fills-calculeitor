@@ -1,4 +1,6 @@
+import { useContext } from "react";
 import { Calculadora } from "../calculadora";
+import { CalcContext } from "../../../context/ContextCalc";
 
 export function Carteira() {
   return (
