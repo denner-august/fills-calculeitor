@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Container } from "./styles";
 
 interface inputProps {
@@ -6,7 +5,7 @@ interface inputProps {
   mensagemQuantidade: string;
   mensagemValor: string;
 }
-export function Calculadora(props: inputProps): JSX.Element {
+export function Calculadora(props: inputProps) {
   const { titulo, mensagemQuantidade, mensagemValor } = props;
 
   return (
