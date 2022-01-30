@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useContext } from "react";
 import { ButtonContainer } from "./styled";
+import { CalcContext } from "../../../context/ContextCalc";
 
-export function Button_Calcular() {
+export function ButtonCalcular() {
+  const { Calcular } = useContext(CalcContext);
   return (
-    <ButtonContainer>
+    <ButtonContainer onClick={() => Calcular()}>
       <p>Calcular</p>
     </ButtonContainer>
   );
