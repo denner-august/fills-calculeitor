@@ -1,10 +1,10 @@
-import { Background_conteudo } from "../background-conteudo";
+import { BackgroundConteudo } from "../background-conteudo";
 import { Container } from "./styles";
 
-export function Background(){
-    return(
-       <Container>
-          <Background_conteudo/>
-       </Container>
-    )
+export function Background() {
+  return (
+    <Container>
+      <BackgroundConteudo />
+    </Container>
+  );
 }
