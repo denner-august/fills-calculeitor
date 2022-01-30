@@ -3,11 +3,22 @@ import { Calculadora } from "../calculadora";
 import { CalcContext } from "../../../context/ContextCalc";
 
 export function Carteira() {
+  const {
+    Tenho_carteira,
+    setTenho_carteira,
+    Valor_carteira,
+    setValor_carteira,
+  } = useContext(CalcContext);
+
   return (
     <Calculadora
       titulo="Carteira"
       mensagemQuantidade="Digite o numero de açoes"
       mensagemValor="digite o valor"
+      Quantidade={Tenho_carteira}
+      setQuantidade={setTenho_carteira}
+      Valor_atual={Valor_carteira}
+      muda_valor={setValor_carteira}
     />
   );
 }
