@@ -7,18 +7,21 @@ height: 100vh;
 display: flex;
 justify-content: center;
 align-items: center;
-padding: 3rem;
+
 `
 
 export const FinalResultado = styled.div`
 background-color: white;
 width: 55rem;
-height: 60vh;
+height: 55rem;
 border-radius: 1rem;
 display: flex;
 flex-direction: column;
-justify-content: space-around;
+/* justify-content: space-around; */
 align-items: center;
+margin: 3rem;
+padding-bottom: 1rem;
+
 
 h2{
     font-size: 2.5rem;
@@ -28,16 +31,17 @@ h2{
 
 button{
     color: white;
-    width: 70%;
-    height: 5rem;
+    width: 80%;
+    height: 10rem;
     background-color:#B7245C;
     border-radius: 10px;
     border-width:0px;
     cursor: pointer;
     &:active{
-        background-color: #12b342;
+        background-color: #B7249C;
     }
 
     font-size: 1.5rem;
 }
 `
+
