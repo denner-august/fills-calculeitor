@@ -13,15 +13,13 @@ align-items: center;
 export const FinalResultado = styled.div`
 background-color: white;
 width: 55rem;
-height: 55rem;
+height: 80%;
 border-radius: 1rem;
 display: flex;
+justify-content: space-evenly;
 flex-direction: column;
-/* justify-content: space-around; */
-align-items: center;
 margin: 3rem;
 padding-bottom: 1rem;
-
 
 h2{
     font-size: 2.5rem;
@@ -30,9 +28,10 @@ h2{
 }
 
 button{
+    margin: 0 auto;
     color: white;
     width: 80%;
-    height: 10rem;
+    height: 5rem;
     background-color:#B7245C;
     border-radius: 10px;
     border-width:0px;
