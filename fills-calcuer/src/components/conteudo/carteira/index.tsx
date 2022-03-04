@@ -16,8 +16,8 @@ export function Carteira() {
       mensagemQuantidade="Digite o numero de açoes"
       mensagemValor="digite o valor"
       Quantidade={Tenho_carteira}
-      setQuantidade={setTenho_carteira}
       Valor_atual={Valor_carteira}
+      setQuantidade={setTenho_carteira}
       muda_valor={setValor_carteira}
     />
   );
