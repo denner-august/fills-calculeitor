@@ -5,6 +5,7 @@ export const Container = styled.main`
     background-color: #f6f2ff;
     width: 95%;
     height: 30%;
+    border-radius: 15px;
     -webkit-box-shadow: 0px 0px 11px 3px rgba(0,0,0,0.62); 
     box-shadow: 0px 0px 11px 3px rgba(0,0,0,0.62);
     display: flex;
@@ -12,7 +13,8 @@ export const Container = styled.main`
     justify-content: center;
     align-items: center;
 
-input{
+    input{
+    font-size: 1.5rem;
     width: 70%;
     height: 3rem;
     margin: 1rem;
@@ -22,5 +24,4 @@ input{
     text-align: center;
    
 }
-
 `
