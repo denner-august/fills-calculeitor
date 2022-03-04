@@ -2,13 +2,10 @@ import styled from 'styled-components'
 
 
 export const Container = styled.div`
-    height: 100%;
     width: 100%;
     border-radius: 1rem;   
     display: flex;
-    justify-content: center;
     align-items: center;
-    text-align: center;
     flex-direction: column;
     
 
@@ -19,7 +16,7 @@ export const Container = styled.div`
 `
 
 export const Input = styled.div`
-    height: 4rem;
+    height: 4rem;  
     width: 80%;
     background-color:#DB5375;
     margin: 0.5rem;
