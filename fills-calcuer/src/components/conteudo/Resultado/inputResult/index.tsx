@@ -2,7 +2,7 @@ import { Container, Input } from "./styles";
 
 interface inputProps {
   titulo: string;
-  Valores?: bigint | number;
+  Valores?: bigint | Number | string;
 }
 
 export function InputResult({ titulo, Valores }: inputProps) {
