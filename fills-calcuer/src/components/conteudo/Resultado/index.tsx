@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { CalcContext } from "../../../context/ContextCalc";
@@ -5,8 +6,13 @@ import { InputResult } from "./inputResult";
 import { Container, FinalResultado } from "./styles";
 
 export function Resultado() {
-  const { total_quantidade, total_valor } = useContext(CalcContext);
+  const { total_quantidade, total_valor, precoMedio, setPrecoMedio } =
+    useContext(CalcContext);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    setPrecoMedio(Number(total_valor) / total_quantidade);
+  }, []);
 
   return (
     <Container>
@@ -15,32 +21,23 @@ export function Resultado() {
           Valores={total_quantidade}
           titulo="Nova Quantidade Total"
         />
-        <InputResult Valores={total_valor} titulo="Seu Novo Valor Total" />
-        <InputResult titulo="titulo" />
-        <InputResult titulo="titulo" />
+        <InputResult
+          Valores={new Intl.NumberFormat("pt-br", {
+            style: "currency",
+            currency: "BRL",
+          }).format(total_valor)}
+          titulo="Seu Novo Valor Total"
+        />
+        <InputResult
+          titulo="Novo preço médio"
+          Valores={new Intl.NumberFormat("pt-br", {
+            style: "currency",
+            currency: "BRL",
+          }).format(precoMedio)}
+        />
 
         <button onClick={() => navigate("/")}>Voltar</button>
       </FinalResultado>
     </Container>
   );
 }
-
-/* 
-  <h2>Resultado</h2>
-        <p>
-          você tera um novo total de{" "}
-          {total_quantidade ? total_quantidade : null} ações
-        </p>
-
-        <p>
-          seu novo valor total será de{" "}
-          {new Intl.NumberFormat("pt-br", {
-            style: "currency",
-            currency: "BRL",
-          }).format(total_valor)}
-        </p>
-
-        <button onClick={() => navigate("/")}>Voltar</button>
-
-
-*/
