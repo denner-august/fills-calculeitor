@@ -17,12 +17,14 @@ export function Calculadora(props: inputProps) {
     <Container>
       <h2>{titulo}</h2>
       <input
+        alt="digite a quantidade  de ações"
         type="number"
         placeholder={mensagemQuantidade}
         onChange={(event) => setQuantidade(event.target.value)}
       />
 
       <CurrencyInput
+        alt="digite o valor por ação"
         id="input-example"
         name="input-name"
         placeholder="Digite o valor"
