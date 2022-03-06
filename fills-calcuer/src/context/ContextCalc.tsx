@@ -41,7 +41,7 @@ export function CalcProvider(props: { children: PropsProps }) {
   const [total_quantidade, setTotal_quantidade] = useState<number>(Number);
   const [total_valor, seTtotal_valor] = useState<number>(Number);
 
-  const [precoMedio, setPrecoMedio] = useState<number>(0);
+  const [precoMedio, setPrecoMedio] = useState<number>(Number);
 
   function Calcular() {
     if (
