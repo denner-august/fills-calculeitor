@@ -12,7 +12,7 @@ export function Resultado() {
 
   useEffect(() => {
     setPrecoMedio(Number(total_valor) / total_quantidade);
-  }, []);
+  });
 
   return (
     <Container>
