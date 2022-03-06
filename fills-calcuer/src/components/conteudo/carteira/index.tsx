@@ -13,8 +13,8 @@ export function Carteira() {
   return (
     <Calculadora
       titulo="Carteira"
-      mensagemQuantidade="Digite o numero de açoes"
-      mensagemValor="digite o valor"
+      mensagemQuantidade="Digite o numero de ações"
+      mensagemValor="Digite o valor"
       Quantidade={Tenho_carteira}
       Valor_atual={Valor_carteira}
       setQuantidade={setTenho_carteira}
