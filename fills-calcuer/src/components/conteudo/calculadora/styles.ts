@@ -24,4 +24,10 @@ export const Container = styled.main`
     text-align: center;
    
 }
+
+@media (max-width:1100px) {
+    input{
+        width: 95% ;
+    }
+}
 `
