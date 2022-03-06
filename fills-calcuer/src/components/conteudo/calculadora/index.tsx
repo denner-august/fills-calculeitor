@@ -11,7 +11,14 @@ interface inputProps {
   muda_valor: any;
 }
 export function Calculadora(props: inputProps) {
-  const { titulo, mensagemQuantidade, muda_valor, setQuantidade } = props;
+  const {
+    titulo,
+    mensagemQuantidade,
+    muda_valor,
+    setQuantidade,
+    Quantidade,
+    Valor_atual,
+  } = props;
 
   return (
     <Container>
@@ -20,10 +27,13 @@ export function Calculadora(props: inputProps) {
         alt="digite a quantidade  de ações"
         type="number"
         placeholder={mensagemQuantidade}
+        value={Quantidade === 0 ? "" : Quantidade}
         onChange={(event) => setQuantidade(event.target.value)}
       />
 
       <CurrencyInput
+        intlConfig={{ locale: "pt-BR", currency: "BRL" }}
+        value={Valor_atual === 0 ? "" : Valor_atual}
         autoComplete="off"
         alt="digite o valor por ação"
         id="input-example"
@@ -31,7 +41,6 @@ export function Calculadora(props: inputProps) {
         placeholder="Digite o valor"
         prefix="$"
         defaultValue={""}
-        decimalsLimit={2}
         groupSeparator=","
         decimalSeparator="."
         onValueChange={(event) => muda_valor(event)}
