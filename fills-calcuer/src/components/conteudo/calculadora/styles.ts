@@ -16,7 +16,10 @@ export const Container = styled.main`
     h2{
         margin-top: 1rem ;
     }
-
+    input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;
+    
+}
     input{
     font-size: 1.5rem;
     width: 70%;
