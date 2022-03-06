@@ -24,6 +24,7 @@ export function Calculadora(props: inputProps) {
       />
 
       <CurrencyInput
+        autoComplete="off"
         alt="digite o valor por ação"
         id="input-example"
         name="input-name"

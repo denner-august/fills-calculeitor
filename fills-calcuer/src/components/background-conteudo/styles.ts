@@ -14,7 +14,7 @@ flex-direction: column;
 align-items: center;
 
 @media (max-width:1100px){
-    height: 80vh ;
+    height: auto ;
 }
 
 

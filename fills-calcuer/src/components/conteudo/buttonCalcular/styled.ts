@@ -6,7 +6,7 @@ export const ButtonContainer = styled.button`
     background-color: #14db50;
     border-radius: 10px;
     border-color: none;
-    margin-top: 5rem;
+    margin-top: 2rem;
     cursor: pointer;
     &:active{
         background-color: #12b342;
