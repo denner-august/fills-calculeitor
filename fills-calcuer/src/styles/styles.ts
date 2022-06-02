@@ -7,7 +7,10 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
-    
+}
+
+body{
+    background-color:#8bc6ec;
 }
 
 
@@ -22,4 +25,4 @@ export const GlobalStyle = createGlobalStyle`
  }
 
 
-`
+`;
