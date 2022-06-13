@@ -1,12 +1,23 @@
 import { render, screen } from "@testing-library/react";
-import Home from "src/pages/index";
+import { Layout } from "../src/components/Layout";
 
-describe("Home", () => {
-  it("renders a heading", () => {
-    render(<Home />);
+//  screen.logTestingPlaygroundURL();
 
-    const heading = screen.getByRole("title");
+const Component_Layout = <Layout />;
 
-    expect(heading).toBeInTheDocument();
-  });
+test("Renderiza layout ", () => {
+  render(Component_Layout);
+
+  const layout = screen.getByRole("Layout");
+
+  expect(layout).toBeInTheDocument();
+});
+
+test("verifica titulo da pagina", () => {
+  render(Component_Layout);
+
+  const GetRoleTitle = screen.getByRole("title");
+  const GetTitle = screen.getByText("Preço Médio");
+
+  expect(GetRoleTitle && GetTitle).toBeInTheDocument();
 });
