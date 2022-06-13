@@ -1,3 +1,9 @@
-export default function Layout() {
-  return <h2>layout</h2>;
+import styles from "./styles.module.scss";
+
+export function Layout() {
+  return (
+    <div role="Layout" className={styles.Container}>
+      <h1 role="title">Preço Médio</h1>
+    </div>
+  );
 }
