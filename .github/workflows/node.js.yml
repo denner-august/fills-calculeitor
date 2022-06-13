@@ -26,6 +26,4 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - run: cd ../..
-      - run: cd next-flls/
-      - run: yarn install
-      - run: yarn test
+      - run: cd next-flls/ && yarn install && yarn test
