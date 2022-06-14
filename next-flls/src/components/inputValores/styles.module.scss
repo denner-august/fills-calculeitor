@@ -1,0 +1,43 @@
+.Container{
+    height: auto;
+    width: 45vw;
+    margin: 10px 10px;
+    border-radius: 10px;
+    border: 2px solid white;
+    color: white;
+
+    padding: 10px 0px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+    input{
+        height: 65px;
+        width: 90%;
+
+        margin: 10px 0px;
+        padding: 10px;
+
+        font-size: 1.1rem;
+
+        border-radius: 10px;
+        border-width: 1px;
+        border-color: black;
+
+        text-align: center;
+    }
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    
+    }
+    input[type=number] {
+        -moz-appearance: textfield;
+    }
+
+    
+}
