@@ -1,9 +1,14 @@
 import { render, screen } from "@testing-library/react";
+import { FllsContextProvider } from "../context/Context";
 import { Layout } from "../src/components/Layout";
 
 const playground = () => screen.logTestingPlaygroundURL();
 
-const Component_Layout = <Layout />;
+const Component_Layout = (
+  <FllsContextProvider>
+    <Layout />
+  </FllsContextProvider>
+);
 
 test("Renderiza layout ", () => {
   render(Component_Layout);
