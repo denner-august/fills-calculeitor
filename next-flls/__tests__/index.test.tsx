@@ -61,4 +61,14 @@ describe("Verificando placeholder e inputs", () => {
 
     expect(CompraPlaceholder && ValorCompraPlaceholder).toBeInTheDocument();
   });
+
+  test("testa se o button está na tela", () => {
+    render(Component_Layout);
+
+    const ButtonCalcular = screen.getByRole("button", {
+      name: /calcular/i,
+    });
+
+    expect(ButtonCalcular).toBeInTheDocument();
+  });
 });
