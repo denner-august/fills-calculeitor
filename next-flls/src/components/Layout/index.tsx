@@ -1,5 +1,6 @@
 import styles from "./styles.module.scss";
 import { Valores } from "../inputValores/index";
+import { ButtonCalcular } from "../buttonCalcular";
 
 export function Layout() {
   return (
@@ -16,6 +17,8 @@ export function Layout() {
         CarteiraPlaceholder="Quantas ações você vai compra?"
         ValorPlaceholder="Qual o valor da ação?"
       />
+
+      <ButtonCalcular />
     </div>
   );
 }
