@@ -20,6 +20,10 @@ interface ContextProps {
     QuantiCompraAções: number;
     CompraPreçoAções: number;
   }) => void;
+
+  mostraResult: boolean;
+
+  setMostraResult: (result: boolean) => void;
 }
 
 interface childrenProps {
@@ -29,6 +33,8 @@ interface childrenProps {
 export const FllsContext = createContext({} as ContextProps);
 
 export function FllsContextProvider({ children }: childrenProps) {
+  const [mostraResult, setMostraResult] = useState(false);
+
   const [usuario, setUserAçõesQuantidade] = useState({
     userAçõesQuantidade: 0,
     userPreçoAções: 0,
@@ -41,7 +47,14 @@ export function FllsContextProvider({ children }: childrenProps) {
 
   return (
     <FllsContext.Provider
-      value={{ usuario, ações, setUserAçõesQuantidade, setAções }}
+      value={{
+        usuario,
+        ações,
+        setUserAçõesQuantidade,
+        setAções,
+        mostraResult,
+        setMostraResult,
+      }}
     >
       {children}
     </FllsContext.Provider>
