@@ -1,27 +1,30 @@
-import styles from "./styles.module.scss";
 import { Valores } from "../inputValores/index";
 import { ButtonCalcular } from "../buttonCalcular";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { FllsContext } from "../../../context/Context";
 
 import { Result } from "../Result/index";
+import { BackgroundLayout } from "../background/backgroundLayout";
 
 export function Layout() {
-  const [mostraResult, setMostraResult] = useState(false); // criar variavel no context para controlar qual component redenrizar
+  const { mostraResult } = useContext(FllsContext);
 
   const {
     usuario: { userAçõesQuantidade, userPreçoAções },
     ações: { CompraPreçoAções, QuantiCompraAções },
     setAções,
     setUserAçõesQuantidade,
+    setMostraResult,
   } = useContext(FllsContext);
 
   return (
     <>
       {mostraResult ? (
-        <Result />
+        <BackgroundLayout>
+          <Result />
+        </BackgroundLayout>
       ) : (
-        <div role="Layout" className={styles.Container}>
+        <BackgroundLayout>
           <h1 role="title">Preço Médio</h1>
 
           <Valores
@@ -43,8 +46,11 @@ export function Layout() {
             dispatch={setAções}
           />
 
-          <ButtonCalcular />
-        </div>
+          <ButtonCalcular
+            nomeButton="Calcular"
+            funcaoChamada={() => setMostraResult(true)}
+          />
+        </BackgroundLayout>
       )}
     </>
   );
