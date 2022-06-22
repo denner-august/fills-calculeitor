@@ -1,9 +1,8 @@
 import { ButtonCalcular } from "../buttonCalcular";
-import styles from "./styles.module.scss";
 
 import stylesContainerInput from "../inputValores/styles.module.scss";
 import { useContext } from "react";
-import { FllsContext } from "context/Context";
+import { FllsContext } from "../../../context/Context";
 export function Result() {
   const { setMostraResult } = useContext(FllsContext);
 
