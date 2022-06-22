@@ -3,17 +3,17 @@ import { ButtonCalcular } from "../buttonCalcular";
 import stylesContainerInput from "../inputValores/styles.module.scss";
 import { useContext } from "react";
 import { FllsContext } from "../../../context/Context";
+import { ResultComponent } from "./Result_Component";
+
 export function Result() {
   const { setMostraResult } = useContext(FllsContext);
 
   return (
     <div className={stylesContainerInput.Container}>
-      <h2>Nova Quantidade Total</h2>
-      <input type="text" />
-      <h2>Seu Novo Valor Total</h2>
-      <input type="text" />
-      <h2>Novo preço médio</h2>
-      <input type="text" />
+      <ResultComponent titulo="Nova Quantidade Total" />
+      <ResultComponent titulo="Seu Novo Valor Total" />
+      <ResultComponent titulo="Novo preço médio" />
+
       <ButtonCalcular
         nomeButton="Voltar"
         funcaoChamada={() => setMostraResult(false)}
