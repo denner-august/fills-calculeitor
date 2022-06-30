@@ -24,6 +24,18 @@ interface ContextProps {
   mostraResult: boolean;
 
   setMostraResult: (result: boolean) => void;
+
+  precoMedio: {
+    quantidadeTotal: number;
+    valorTotal: number;
+    novoPrecoMedio: number;
+  };
+
+  setPrecoMedio: (objeto: {
+    quantidadeTotal: number;
+    valorTotal: number;
+    novoPrecoMedio: number;
+  }) => void;
 }
 
 interface childrenProps {
@@ -45,6 +57,12 @@ export function FllsContextProvider({ children }: childrenProps) {
     CompraPreçoAções: 0,
   });
 
+  const [precoMedio, setPrecoMedio] = useState({
+    quantidadeTotal: 0,
+    valorTotal: 0,
+    novoPrecoMedio: 0,
+  });
+
   return (
     <FllsContext.Provider
       value={{
@@ -54,6 +72,8 @@ export function FllsContextProvider({ children }: childrenProps) {
         setAções,
         mostraResult,
         setMostraResult,
+        precoMedio,
+        setPrecoMedio,
       }}
     >
       {children}

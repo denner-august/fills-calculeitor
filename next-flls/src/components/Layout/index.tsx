@@ -5,6 +5,20 @@ import { FllsContext } from "../../../context/Context";
 
 import { Result } from "../Result/index";
 import { BackgroundLayout } from "../background/backgroundLayout";
+import Swal from "sweetalert2";
+
+interface ValoresProps {
+  userQauntidade: string | number;
+  userCompra: string | number;
+  mercadoQuantidade: string | number;
+  mercadoCompra: string | number;
+}
+
+interface novosValores {
+  novaQuantidade: number;
+  novoValorTotal: number;
+  precoMedio: number;
+}
 
 export function Layout() {
   const { mostraResult } = useContext(FllsContext);
@@ -12,10 +26,56 @@ export function Layout() {
   const {
     usuario: { userAçõesQuantidade, userPreçoAções },
     ações: { CompraPreçoAções, QuantiCompraAções },
+    setPrecoMedio,
     setAções,
     setUserAçõesQuantidade,
     setMostraResult,
   } = useContext(FllsContext);
+
+  const valores = [
+    userAçõesQuantidade,
+    userPreçoAções,
+    CompraPreçoAções,
+    QuantiCompraAções,
+  ];
+
+  function VerificaValores() {
+    const buscar = valores.includes(0);
+
+    if (buscar) {
+      return Swal.fire("Preencha todos os campos", "", "error");
+    }
+
+    calcularPrecoMedio();
+  }
+
+  function calcularPrecoMedio() {
+    const novaQuantidade = userAçõesQuantidade + QuantiCompraAções;
+
+    const novoValorTotal =
+      userAçõesQuantidade * userPreçoAções +
+      QuantiCompraAções * CompraPreçoAções;
+
+    const precoMedio = novoValorTotal / novaQuantidade;
+
+    const novosValores = {
+      novaQuantidade,
+      novoValorTotal,
+      precoMedio,
+    };
+
+    MostraValores(novosValores);
+  }
+
+  function MostraValores(novosValores: novosValores) {
+    setPrecoMedio({
+      quantidadeTotal: novosValores.novaQuantidade,
+      valorTotal: novosValores.novoValorTotal,
+      novoPrecoMedio: novosValores.precoMedio,
+    });
+
+    setMostraResult(true);
+  }
 
   return (
     <>
@@ -48,7 +108,7 @@ export function Layout() {
 
           <ButtonCalcular
             nomeButton="Calcular"
-            funcaoChamada={() => setMostraResult(true)}
+            funcaoChamada={VerificaValores}
           />
         </BackgroundLayout>
       )}
