@@ -1,6 +1,6 @@
 import { Valores } from "../inputValores/index";
 import { ButtonCalcular } from "../buttonCalcular";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { FllsContext } from "../../../context/Context";
 
 import { Result } from "../Result/index";
@@ -34,8 +34,9 @@ export function Layout() {
 
   function VerificaValores() {
     const buscar = valores.includes(0);
+    const buscarInan = valores.includes(undefined);
 
-    if (buscar) {
+    if (buscar || buscarInan) {
       return Swal.fire("Preencha todos os campos", "", "error");
     }
 

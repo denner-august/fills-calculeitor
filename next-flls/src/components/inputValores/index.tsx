@@ -34,7 +34,11 @@ export function Valores({
       <h2>{Titulo}</h2>
 
       <input
-        value={açõesQuantidade === 0 ? "" : açõesQuantidade}
+        value={
+          açõesQuantidade === 0 || açõesQuantidade === undefined
+            ? ""
+            : açõesQuantidade
+        }
         placeholder={CarteiraPlaceholder}
         type="number"
         onChange={(event) =>
@@ -50,19 +54,24 @@ export function Valores({
         }
       />
 
-      <input
-        value={açõesPreço === 0 ? "" : açõesPreço}
+      <CurrencyInput
+        value={
+          açõesPreço === 0 || açõesPreço === undefined || isNaN(açõesPreço)
+            ? ""
+            : açõesPreço
+        }
         placeholder={ValorPlaceholder}
-        type="number"
-        onChange={(event) =>
+        allowDecimals={false}
+        prefix={"$"}
+        onValueChange={(value) =>
           usuario
             ? dispatch({
                 userAçõesQuantidade: açõesQuantidade,
-                userPreçoAções: Number(event.target.value),
+                userPreçoAções: Number(value),
               })
             : dispatch({
                 QuantiCompraAções: açõesQuantidade,
-                CompraPreçoAções: Number(event.target.value),
+                CompraPreçoAções: Number(value),
               })
         }
       />

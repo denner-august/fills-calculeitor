@@ -5,7 +5,7 @@ interface ResultComponentProps {
 
 export function ResultComponent({
   titulo = "escreva seu titulo",
-  valores,
+  valores = 0,
 }: ResultComponentProps) {
   return (
     <>

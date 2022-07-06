@@ -19,3 +19,10 @@
     background-color: white;
     color: black;
 }
+
+@media screen and (max-width: 731px) {
+    .Button{
+        height: 55px;
+        width: 50%;
+    }
+}
