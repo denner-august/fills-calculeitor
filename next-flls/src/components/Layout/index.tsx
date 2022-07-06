@@ -35,8 +35,9 @@ export function Layout() {
   function VerificaValores() {
     const buscar = valores.includes(0);
     const buscarInan = valores.includes(undefined);
+    const FiltraTipos = valores.filter((item) => item !== Number(item));
 
-    if (buscar || buscarInan) {
+    if (buscar || buscarInan || FiltraTipos.length > 0) {
       return Swal.fire("Preencha todos os campos", "", "error");
     }
 
