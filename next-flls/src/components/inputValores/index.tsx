@@ -1,18 +1,19 @@
 import styles from "./styles.module.scss";
+import CurrencyInput from "react-currency-input-field";
 
 interface ValoresProps {
   Titulo?: string;
   CarteiraPlaceholder?: string;
   ValorPlaceholder?: string;
 
-  açõesQuantidade: number;
-  açõesPreço: number;
+  açõesQuantidade?: number;
+  açõesPreço?: number;
 
   dispatch: (objeto: {
-    userAçõesQuantidade: number;
-    userPreçoAções: number;
-    QuantiCompraAções: number;
-    CompraPreçoAções: number;
+    userAçõesQuantidade?: number;
+    userPreçoAções?: number;
+    QuantiCompraAções?: number;
+    CompraPreçoAções?: number;
   }) => void;
 
   usuario?: Boolean;
@@ -41,12 +42,8 @@ export function Valores({
             ? dispatch({
                 userAçõesQuantidade: Number(event.target.value),
                 userPreçoAções: açõesPreço,
-                QuantiCompraAções: 0,
-                CompraPreçoAções: 0,
               })
             : dispatch({
-                userAçõesQuantidade: 0,
-                userPreçoAções: 0,
                 QuantiCompraAções: Number(event.target.value),
                 CompraPreçoAções: açõesPreço,
               })
@@ -62,12 +59,8 @@ export function Valores({
             ? dispatch({
                 userAçõesQuantidade: açõesQuantidade,
                 userPreçoAções: Number(event.target.value),
-                QuantiCompraAções: 0,
-                CompraPreçoAções: 0,
               })
             : dispatch({
-                userAçõesQuantidade: 0,
-                userPreçoAções: 0,
                 QuantiCompraAções: açõesQuantidade,
                 CompraPreçoAções: Number(event.target.value),
               })

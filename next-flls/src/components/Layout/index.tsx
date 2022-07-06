@@ -1,18 +1,11 @@
 import { Valores } from "../inputValores/index";
 import { ButtonCalcular } from "../buttonCalcular";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { FllsContext } from "../../../context/Context";
 
 import { Result } from "../Result/index";
 import { BackgroundLayout } from "../background/backgroundLayout";
 import Swal from "sweetalert2";
-
-interface ValoresProps {
-  userQauntidade: string | number;
-  userCompra: string | number;
-  mercadoQuantidade: string | number;
-  mercadoCompra: string | number;
-}
 
 interface novosValores {
   novaQuantidade: number;
@@ -50,11 +43,12 @@ export function Layout() {
   }
 
   function calcularPrecoMedio() {
-    const novaQuantidade = userAçõesQuantidade + QuantiCompraAções;
+    const novaQuantidade =
+      Number(userAçõesQuantidade) + Number(QuantiCompraAções);
 
     const novoValorTotal =
-      userAçõesQuantidade * userPreçoAções +
-      QuantiCompraAções * CompraPreçoAções;
+      Number(userAçõesQuantidade) * Number(userPreçoAções) +
+      Number(QuantiCompraAções) * Number(CompraPreçoAções);
 
     const precoMedio = novoValorTotal / novaQuantidade;
 
