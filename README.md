@@ -6,19 +6,19 @@
 
 # Inicial
 
-![alternate text]( ./next-flls/public/readme_imagens/imagem01.png "inicial")
+![inicial]( ./next-flls/public/readme_imagens/imagem01.png "inicial")
 
 # Erro
 
-![alternate text]( ./next-flls/public/readme_imagens/imagem02.png "inicial")
+![erro]( ./next-flls/public/readme_imagens/imagem02.png "erro")
 
 # Inputs 
 
-![alternate text]( ./next-flls/public/readme_imagens/imagem03.png "inicial")
+![inputs]( ./next-flls/public/readme_imagens/imagem03.png "inputs")
 
 # Calculo
 
-![alternate text]( ./next-flls/public/readme_imagens/imagem04.png "inicial")
+![calculo final]( ./next-flls/public/readme_imagens/imagem04.png "calculo final")
 
 # qualquer sugestão de melhoria pode entrar em contato comigo atráves das redes sociais
 
