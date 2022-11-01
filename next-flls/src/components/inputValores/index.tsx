@@ -54,24 +54,23 @@ export function Valores({
         }
       />
 
-      <CurrencyInput
+      <input
         value={
           açõesPreço === 0 || açõesPreço === undefined || isNaN(açõesPreço)
             ? ""
             : açõesPreço
         }
         placeholder={ValorPlaceholder}
-        allowDecimals={false}
-        prefix={"$"}
-        onValueChange={(value) =>
+        type="number"
+        onChange={(event) =>
           usuario
             ? dispatch({
                 userAçõesQuantidade: açõesQuantidade,
-                userPreçoAções: Number(value),
+                userPreçoAções: Number(event.target.value),
               })
             : dispatch({
                 QuantiCompraAções: açõesQuantidade,
-                CompraPreçoAções: Number(value),
+                CompraPreçoAções: Number(event.target.value),
               })
         }
       />
