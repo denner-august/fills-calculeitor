@@ -5,7 +5,8 @@ import { FllsContext } from "../../../context/Context";
 
 import { Result } from "../Result/index";
 import { BackgroundLayout } from "../background/backgroundLayout";
-import Swal from "sweetalert2";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 interface novosValores {
   novaQuantidade: number;
@@ -38,7 +39,16 @@ export function Layout() {
     const FiltraTipos = valores.filter((item) => item !== Number(item));
 
     if (buscar || buscarInan || FiltraTipos.length > 0) {
-      return Swal.fire("Preencha todos os campos", "", "error");
+      return toast.warn("insira os valor primeiro", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
     }
 
     calcularPrecoMedio();
