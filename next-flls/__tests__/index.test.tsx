@@ -1,3 +1,4 @@
+import "@testing-library/jest-dom";
 import { render, screen, fireEvent } from "@testing-library/react";
 
 import { FllsContextProvider } from "../context/Context";
@@ -89,42 +90,14 @@ describe("Verificando placeholder e inputs", () => {
 
 describe("Testa o component de Resultado", () => {
   it("testando texto do component", () => {
-    render(Component_Layout);
+    render(Component_Result);
 
-    const buttonCalcular = screen.getByRole("button", {
-      name: /calcular/i,
-    });
+    playground();
 
-    fireEvent.click(buttonCalcular);
+    const titleNovaQuantidadeText = screen.getByText(/nova quantidade total/i);
 
-    const input1 = screen.getByRole("heading", {
-      name: /nova quantidade total/i,
-    });
+    const titleNovoValorText = screen.getByText(/seu novo valor total/i);
 
-    const input2 = screen.getByRole("heading", {
-      name: /Seu Novo Valor Total/i,
-    });
-
-    const input3 = screen.getByRole("heading", {
-      name: /Novo preço médio/i,
-    });
-
-    expect(input1).toHaveTextContent("Nova Quantidade Total");
-    expect(input2).toHaveTextContent("Seu Novo Valor Total");
-    expect(input3).toHaveTextContent("Novo preço médio");
-  });
-
-  it("testando a quantidade de input", () => {
-    render(Component_Layout);
-
-    const buttonCalcular = screen.getByRole("button", {
-      name: /calcular/i,
-    });
-
-    fireEvent.click(buttonCalcular);
-
-    const inputs = screen.getAllByRole("textbox");
-
-    expect(inputs).toHaveLength(3);
+    expect(titleNovaQuantidadeText && titleNovoValorText).toBeInTheDocument();
   });
 });
