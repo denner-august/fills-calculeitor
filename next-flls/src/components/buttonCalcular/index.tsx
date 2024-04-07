@@ -7,7 +7,7 @@ interface ButtonProps {
 
 export function ButtonCalcular({
   funcaoChamada,
-  nomeButton = "teste",
+  nomeButton = "Calcular",
 }: ButtonProps) {
   return (
     <button onClick={funcaoChamada} className={styles.Button}>
